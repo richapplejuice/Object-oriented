@@ -1,5 +1,8 @@
+import random
+
 #task1
 print("Hello")
+
 
 #task2
 def get_user_numbers(): #function asking user to place numbers
@@ -24,6 +27,13 @@ print("User numbers:", user_numbers)
 user_strings = get_user_strings()
 print("User strings:", user_strings)
 
+random_numbers = [random.randint(1, 100) for _ in range(10)]
+print("Random numbers:", random_numbers)
 
 
+#task3
+sorted_user_numbers = sorted(user_numbers)
+print("Sorted user numbers: ", sorted_user_numbers)
 
+sorted_user_strings = sorted(user_strings, key=str.lower) #calculates everything in lowercase
+print("Sorted user strings: ", sorted_user_strings)
