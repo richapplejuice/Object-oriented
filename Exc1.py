@@ -43,7 +43,7 @@ print("Sorted user strings: ", sorted_user_strings)
 
 #☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆#
 
-'''
+
 
 #task4
 
@@ -72,3 +72,25 @@ def main():
 
 
 main()
+
+#☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆#
+
+
+
+#task5
+
+def count_even_integers():
+    count = 0
+    while True:
+        num = int(input("Enter an number (0 to exit): "))
+        if num == 0:
+            break
+        if num % 2 == 0:
+            count += 1
+    print("Number of even integers:", count)
+
+count_even_integers()
+
+#☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆#
+
+'''
