@@ -77,20 +77,89 @@ main()
 
 
 
-#task5
+#task5 & task6
 
 def count_even_integers():
     count = 0
-    while True:
-        num = int(input("Enter an number (0 to exit): "))
-        if num == 0:
+    while True: 
+        num = int(input("Enter even integers, 0 to exit: "))
+        if num == 0: 
             break
         if num % 2 == 0:
             count += 1
-    print("Number of even integers:", count)
+    print("Amount of even integers", count)
+
+        
+def count_positive_integers():
+    total = 0
+    while True:
+
+
+        num = int(input("Integers divisible by 3 adds up, 0 to exit: "))
+        if num == 0:
+            break
+        if num > 0 and num % 3 == 0:
+            total += num
+    
+    print("Sum of positive numbers divisible by three:", total)
 
 count_even_integers()
+count_positive_integers()
 
 #☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆#
-
+ 
 '''
+
+#task8
+import random
+
+def players_choice():
+    while True:
+        player_choice = input("Rock, Paper or Scissors?: ").lower()
+        if player_choice in ['rock', 'paper', 'scissors']:
+            return player_choice
+        else:
+            print("Invalid choice")
+
+def npcs_choice():
+    choices = ['rock', 'paper', 'scissors']
+    return random.choice(choices)
+
+def winner(player_choice, npc_choice):
+    if player_choice == npc_choice:
+        return "IT'S A TIE. "
+    elif(player_choice == 'rock' and npc_choice == 'scissors') or \
+        (player_choice == 'paper' and npc_choice == 'rock') or \
+        (player_choice == 'scissors' and npc_choice == 'paper'):
+        return "YOU WIN."
+    else: 
+        return "NPC WINS."
+    
+def game():
+    player_wins = 0
+    npc_wins = 0
+
+    while player_wins < 3 and npc_wins < 3:
+        player_choice = players_choice()
+        npc_choice = npcs_choice()
+        print("You chose:", player_choice)
+        print("NPC chose:", npc_choice)
+
+        result = winner(player_choice, npc_choice)
+        print(result)
+
+        if result == "YOU WIN.":
+            player_wins += 1
+        elif result == "NPC WINS.":
+            npc_wins += 1
+        
+        print("Your Wins:", player_wins)
+        print("NPC wins:", npc_wins)
+        print("⭒⭒⭒⭒⭒⭒⭒⭒⭒⭒⭒⭒⭒⭒⭒⭒⭒⭒⭒⭒⭒⭒⭒⭒⭒⭒⭒⭒⭒⭒")
+    
+    if player_wins == 3:
+        print("Congratulations, you win the game")
+    else:
+        print("NPC wins the game")
+
+game() 
