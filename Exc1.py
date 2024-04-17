@@ -75,22 +75,36 @@ main()
 
 #☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆#
 
+'''
 
-
-#task5
+#task5 & task6
 
 def count_even_integers():
     count = 0
-    while True:
-        num = int(input("Enter an number (0 to exit): "))
-        if num == 0:
+    while True: 
+        num = int(input("Enter even integers, 0 to exit: "))
+        if num == 0: 
             break
         if num % 2 == 0:
             count += 1
-    print("Number of even integers:", count)
+    print("Amount of even integers", count)
+
+        
+def count_positive_integers():
+    total = 0
+    while True:
+
+
+        num = int(input("Integers divisible by 3 adds up, 0 to exit: "))
+        if num == 0:
+            break
+        if num > 0 and num % 3 == 0:
+            total += num
+    
+    print("Sum of positive numbers divisible by three:", total)
 
 count_even_integers()
+count_positive_integers()
 
-#☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆#
 
-'''
+                  
