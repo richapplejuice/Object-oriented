@@ -34,3 +34,42 @@ uses to set required member variables
 
 '''
 
+
+
+#task2
+import random
+
+class Coin:
+    def __init__(self):
+        self.sideup = 'Heads'
+
+    def toss_the_coin(self):
+        outcome = random.randint(0,4)
+
+        if outcome == 0:
+            self.sideup = 'Heads'
+        elif outcome == 1:
+            self.sideup = 'Coin lands on the table uprigth.'
+        elif outcome == 2:
+            self.sideup = 'Coin drops on the ground and disappears in a rabbit hole.'
+        elif outcome == 3:
+            self.sideup = 'coin defies gravity and gets lost on a wormhole in space.'
+        else:
+            self.sideup ='tails'
+        
+    
+    def get_sideup(self):
+        return self.sideup
+
+def main():
+    my_coin = Coin()
+    print("This side is up:", my_coin.get_sideup())
+
+    print("Tossing the coin...")
+    my_coin.toss_the_coin()
+
+    print("Now this side is up:", my_coin.get_sideup())
+
+main()
+
+
