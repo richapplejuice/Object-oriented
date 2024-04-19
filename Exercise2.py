@@ -1,5 +1,4 @@
-#Task1
-
+#Task 1
 '''
 a. Pseudocode:
 Descrpition of a computer program that uses simple 
@@ -35,9 +34,8 @@ uses to set required member variables
 '''
 
 
+#task 2
 '''
-
-#task2
 import random
 
 class Coin:
@@ -75,8 +73,8 @@ main()
 '''
 
 
-
-#task3
+#task 3
+'''
 import time 
 
 class AlarmClock: 
@@ -107,5 +105,28 @@ def main():
 
 if __name__ == "__main__":
     main()
+'''
+
+
+#Task 4
+
+def factorials(n:int) -> dict: 
+    factorial_dict = {} #creates empty dictionary to store factorial results.
+    
+    #loop throug numbers from 1 to n(maximum)
+    for i in range(1, n + 1):
+        factorial = 1   #Initialize facotrial value to 1 for each number
+                        
+                        #multiplies factorial numbers from 1 to i
+        for j in range(1, i + 1):
+            factorial *=j
+        factorial_dict[i] = factorial #stores resulet in dictionary 
+
+    return factorial_dict
+
+k = factorials(5)
+print(k[1])
+print(k[3])
+print(k[5]) # 1 * 1 * 2 * 3 * 4 * 5
 
 
