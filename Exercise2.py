@@ -190,7 +190,7 @@ print(f"The genre of the manga {manga.name} is {manga.genre}")
 '''
 
 #task 8
-
+'''
 Class Checklist:
     def __init__(self, header:str, entries:list):
         self.header = header
@@ -210,3 +210,21 @@ Class Cable:
         self.lenght = lenght
         self.max_speed = max_speed
         self.bidirectional = bidirectional
+'''
+
+
+#task 9
+
+class Pet:
+    def __init__(self, name, species, year_of_birth):
+        self.name = name
+        self.species = species
+        self.year_of_birth = year_of_birth
+
+def new_pet(name: str, species:str, year_of_birth: int):
+    return Pet(name, species, year_of_birth)
+
+my_pet = new_pet("Luffy", "Dawg", 2017)
+print(my_pet.name)
+print(my_pet.species)
+print(my_pet.year_of_birth)
