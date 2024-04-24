@@ -175,7 +175,7 @@ print(years)
 
 
 #task 7
-
+'''
 class Manga:
     def __init__(self, name, author, genre, year):
         self.name = name
@@ -187,3 +187,26 @@ manga = Manga("Kingdom Hearts Final Mix", "Shiro Amano", "Action & Fantasy", "20
 
 print(f"{manga.author}: {manga.name} ({manga.year})")
 print(f"The genre of the manga {manga.name} is {manga.genre}")
+'''
+
+#task 8
+
+Class Checklist:
+    def __init__(self, header:str, entries:list):
+        self.header = header
+        self.entries = entries
+
+
+Class Customer:
+    def __init__(self, id:str, balance:float, discount:int):
+        self.id = id
+        self.balance = balance
+        self.discount = discount
+
+
+Class Cable:
+    def __init__(self, model:str, lenght:float, max_speed:int, bidirectional:bool):
+        self.model = model
+        self.lenght = lenght
+        self.max_speed = max_speed
+        self.bidirectional = bidirectional
