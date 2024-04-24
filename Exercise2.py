@@ -131,7 +131,6 @@ print(k[5]) # 1 * 1 * 2 * 3 * 4 * 5
 '''
 
 
-
 #task5
 '''
 def smallest_average(person1: dict, person2: dict, person3: dict) -> dict:
@@ -158,6 +157,7 @@ print(smallest_average(person1, person2, person3))
 
 
 #task 6
+'''
 from datetime import date
 
 def list_years(dates:list) -> list:
@@ -171,3 +171,19 @@ date3 = date(1993, 5, 9)
 
 years = list_years([date1, date2, date3])
 print(years)
+'''
+
+
+#task 7
+
+class Manga:
+    def __init__(self, name, author, genre, year):
+        self.name = name
+        self.author = author
+        self.genre = genre
+        self.year = year
+
+manga = Manga("Kingdom Hearts Final Mix", "Shiro Amano", "Action & Fantasy", "2021")
+
+print(f"{manga.author}: {manga.name} ({manga.year})")
+print(f"The genre of the manga {manga.name} is {manga.genre}")
