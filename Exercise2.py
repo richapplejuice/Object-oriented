@@ -133,7 +133,7 @@ print(k[5]) # 1 * 1 * 2 * 3 * 4 * 5
 
 
 #task5
-
+'''
 def smallest_average(person1: dict, person2: dict, person3: dict) -> dict:
     
     person1_avg = (person1['result1'] + person1['result2'] + person1['result3']) / 3
@@ -154,3 +154,20 @@ person2 = {"name": "Gary", "result1": 5, "result2": 1, "result3": 8}
 person3 = {"name": "Larry", "result1": 3, "result2": 1, "result3": 1}
 
 print(smallest_average(person1, person2, person3))
+'''
+
+
+#task 6
+from datetime import date
+
+def list_years(dates:list) -> list:
+    years = [d.year for d in dates]
+    sorted_years = sorted(years)
+    return sorted_years
+
+date1 = date(2019, 2, 3)
+date2 = date(2006, 10, 10)
+date3 = date(1993, 5, 9)
+
+years = list_years([date1, date2, date3])
+print(years)
