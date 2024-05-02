@@ -1,6 +1,6 @@
 #Execise3
 
-#task1
+#task 1
 '''
 a. Encapsulation:
 One of the fundamental concepts in OOP. Hides the details from
@@ -26,7 +26,7 @@ and behaviour.
 '''
 
 
-#task3
+#task 3
 '''
 class LunchCard:
     def __init__(self, balance: float):
@@ -66,8 +66,8 @@ card.deposit_money(200)
 print(card)
 '''
 
-#task4
-
+#task 4
+'''
 class ExamSubmission:
     def __init__(self, examinee: str, points: int):
         self.examinee = examinee
@@ -90,3 +90,28 @@ lowest_passing_grade = 70
 passed_submissions = passed(submissions, lowest_passing_grade)
 for submission in passed_submissions:
     print(submission.examinee, submission.points)
+'''
+
+#task 5
+
+class LunchCard:
+    def __init__(self, balance: float):
+        self.balance = balance
+
+    def __str__(self):
+        return f"Balance {self.balance:.1f}"
+
+    def subtract_from_balance(self, amount: float):
+        if self.balance >= amount: #checks if you got the money to cover
+            self.balance -= amount #substracts the money if sufficient
+            return True 
+        else:
+            return False
+        
+
+card = LunchCard(10)
+print(card)
+print("Payment successful:", card.subtract_from_balance(8))
+print(card)
+print("Payment successful:", card.subtract_from_balance(6))
+print(card)
