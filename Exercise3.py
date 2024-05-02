@@ -27,7 +27,7 @@ and behaviour.
 
 
 #task3
-
+'''
 class LunchCard:
     def __init__(self, balance: float):
         self.balance = balance
@@ -64,3 +64,29 @@ print(card)
 
 card.deposit_money(200)
 print(card)
+'''
+
+#task4
+
+class ExamSubmission:
+    def __init__(self, examinee: str, points: int):
+        self.examinee = examinee
+        self.points = points
+
+def passed(submissions: list, lowest_passing: int):
+    passed_submissions = [] # list to store passed submissions
+    for submission in submissions:
+        if submission.points >= lowest_passing:
+            passed_submissions.append(submission) # if the submission passes, adds to the list
+    return passed_submissions
+
+submissions = [
+    ExamSubmission("Alice", 80),
+    ExamSubmission("Peikko", 60),
+    ExamSubmission("Stitch", 90)
+]
+
+lowest_passing_grade = 70
+passed_submissions = passed(submissions, lowest_passing_grade)
+for submission in passed_submissions:
+    print(submission.examinee, submission.points)
