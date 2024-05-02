@@ -93,7 +93,8 @@ for submission in passed_submissions:
 '''
 
 #task 5
-
+#part1 
+'''
 class LunchCard:
     def __init__(self, balance: float):
         self.balance = balance
@@ -108,10 +109,48 @@ class LunchCard:
         else:
             return False
         
-
 card = LunchCard(10)
 print(card)
 print("Payment successful:", card.subtract_from_balance(8))
 print(card)
 print("Payment successful:", card.subtract_from_balance(6))
 print(card)
+'''
+
+#task 6
+
+#part-1
+class Present:
+    def __init__(self, name: str, weight: int):
+        self.name = name
+        self.weight = weight
+
+    def __str__(self):
+        return f"{self.name} ({self.weight} g)"
+
+
+book = Present("Ta-Nehisi Coates: The Water Dancer", 200)
+print("The name of the present:", book.name)
+print("The weight of the present:", book.weight)
+print("Present:", book)
+
+#part-2
+class Box:
+    def __init__(self):
+        self.presents = []
+
+    def add_present(self, present: Present):
+        self.presents.append(present)
+
+    def total_weight(self):
+        return sum(present.weight for present in self.presents)
+
+
+book = Present("Ta-Nehisi Coates: The Water Dancer", 200)
+box = Box()
+box.add_present(book)
+print(box.total_weight())
+
+cd = Present("Pink Floyd: Dark Side of the Moon", 50)
+box.add_present(cd)
+print(box.total_weight())
