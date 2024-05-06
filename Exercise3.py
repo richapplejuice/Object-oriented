@@ -117,8 +117,8 @@ print("Payment successful:", card.subtract_from_balance(6))
 print(card)
 '''
 
-#task 6
-
+#task 6 Part 1 & 2
+'''
 #part-1
 class Present:
     def __init__(self, name: str, weight: int):
@@ -154,3 +154,66 @@ print(box.total_weight())
 cd = Present("Pink Floyd: Dark Side of the Moon", 50)
 box.add_present(cd)
 print(box.total_weight())
+'''
+
+#task 7 - Part 1, 2 & 3
+#part-1
+class Person:
+    def __init__(self, name, height):
+        self.name = name
+        self.height = height
+
+class Room:
+    def __init__(self):
+        self.persons = []
+
+    def add(self, person: Person):
+        self.persons.append(person)
+
+    def is_empty(self):
+        return len(self.persons) == 0
+
+    def print_contents(self):
+        if self.is_empty():
+            print("The room is empty.")
+        else:
+            total_height = sum(person.height for person in self.persons)
+            print(f"There are {len(self.persons)} persons in the room, and their combined height is {total_height} cm.")
+            for person in self.persons:
+                print(f"{person.name} ({person.height} cm)")
+                
+    #Part-2
+    def shortest(self):
+        if self.is_empty():
+            return None
+        else:
+            shortest_person = min(self.persons, key=lambda person: person.height)
+            return shortest_person.name
+        
+
+    #Part-3
+    def remove_shortest(self):
+        if self.is_empty():
+            return None
+        else:
+            shortest_person = min(self.persons, key=lambda person: person.height)
+            self.persons.remove(shortest_person)
+            return shortest_person
+
+room = Room()
+room.add(Person("Lea", 183))
+room.add(Person("Kenya", 172))
+room.add(Person("Ally", 166))
+room.add(Person("Nina", 162))
+room.add(Person("Dorothy", 175))
+print("Is the room empty?", room.is_empty())  
+print("Shortest:", room.shortest())  
+print()
+
+removed = room.remove_shortest()
+if removed:
+    print(f"Removed from room: {removed.name}")
+print()
+
+room.print_contents()
+
