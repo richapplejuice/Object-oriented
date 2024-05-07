@@ -37,7 +37,7 @@ class Item:
     def __str__(self):
         return f"{self.__name} ({self.__weight} g)"
     
-#Part-2 
+#Part-2 & Part-4
 class Suitcase:
     def __init__(self, max_weight):
         self.__max_weight = max_weight
