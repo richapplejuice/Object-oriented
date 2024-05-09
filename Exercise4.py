@@ -119,7 +119,7 @@ print(laptop)
 """
 
 #Task 4
-
+"""
 class ComputerGame:
     def __init__(self, name: str, publisher: str, year: int):
         self.name = name
@@ -153,3 +153,43 @@ museum.add_game(ComputerGame("GTA 2", "Rockstar", 1999))
 museum.add_game(ComputerGame("Bubble Bobble", "Taito", 1986))
 for game in museum.list_games():
     print(game.name)
+"""
+
+
+#Task 5
+class MagicPotion:
+    def __init__(self, name: str):
+        self._name = name
+        self._ingredients = []
+
+    def add_ingredient(self, ingredient: str, amount: float):
+        self._ingredients.append((ingredient, amount))
+
+    def print_recipe(self):
+        print(self._name)
+        for ingredient in self._ingredients:
+            print(f"{ingredient[0]} {ingredient[1]} grams")
+
+class SecretMagicPotion(MagicPotion):
+    def __init__(self, name, password):
+        super().__init__(name)
+        self.password = password
+
+    def add_ingredient(self, ingredient: str, amount: float, password: str):
+        if password == self.password:
+            super().add_ingredient(ingredient, amount)
+        else:
+            raise ValueError("Wrong Password!")
+        
+    def print_recipe(self, password: str):
+        if password == self.password:
+            super().print_recipe()
+        else:
+            raise ValueError("Wrong Password!")
+
+diminuendo = SecretMagicPotion("Diminuendo maximus", "hocuspocus")
+diminuendo.add_ingredient("Toadstool", 1.5, "hocuspocus")
+diminuendo.add_ingredient("Magic sand", 3.0, "hocuspocus")
+diminuendo.add_ingredient("Frogspawn", 4.0, "hocuspocus")
+diminuendo.print_recipe("hocuspocus")
+diminuendo.print_recipe("pocushocus") 
