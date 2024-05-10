@@ -239,7 +239,7 @@ if __name__ == "__main__":
     main()
 
 
-
+'''
 dice1 = Dice()
 dice2 = Dice()
 dice3 = Dice()
@@ -247,3 +247,4 @@ dice_list = [dice1, dice2, dice3]
 
 print("Let's play dice!")
 play_game(dice_list)
+'''
