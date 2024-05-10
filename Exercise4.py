@@ -157,6 +157,7 @@ for game in museum.list_games():
 
 
 #Task 5
+'''
 class MagicPotion:
     def __init__(self, name: str):
         self._name = name
@@ -193,3 +194,57 @@ diminuendo.add_ingredient("Magic sand", 3.0, "hocuspocus")
 diminuendo.add_ingredient("Frogspawn", 4.0, "hocuspocus")
 diminuendo.print_recipe("hocuspocus")
 diminuendo.print_recipe("pocushocus") 
+'''
+
+#Task 6
+#part-1
+import random
+
+class Dice:
+    def __init__(self, sides=6):
+        self.sides = sides
+
+    def roll(self):
+        return random.randint(1, self.sides)
+
+def roll_dice(dice_list):
+    return [dice.roll() for dice in dice_list]
+
+def play_game(dice_list):
+    rolls = []
+    for _ in range(2): 
+        rolls.append(roll_dice(dice_list))
+
+    player1_sum = sum(rolls[0])
+    player2_sum = sum(rolls[1])
+
+    print("Player 1 rolls:", rolls[0], "- Sum:", player1_sum)
+    print("Player 2 rolls:", rolls[1], "- Sum:", player2_sum)
+
+    if player1_sum > player2_sum:
+        print("Player 1 wins!")
+    elif player2_sum > player1_sum:
+        print("Player 2 wins!")
+    else:
+        print("It's a tie! Roll again.")
+
+#part-2
+def main():
+    num_dice = int(input("Enter the number of dice you want to use: "))
+    dice_list = [Dice() for _ in range(num_dice)]
+    print("Lets play dice with", num_dice, "dice!")
+    play_game(dice_list)
+
+if __name__ == "__main__":
+    main()
+
+
+'''
+dice1 = Dice()
+dice2 = Dice()
+dice3 = Dice()
+dice_list = [dice1, dice2, dice3]
+
+print("Let's play dice!")
+play_game(dice_list)
+'''
