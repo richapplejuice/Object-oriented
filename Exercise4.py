@@ -260,20 +260,20 @@ class Person:
         self._numbers = []
         self._address = None
 
-    def name(self):
+    def name(self): # Method to get a name
         return self._name
     
-    def numbers(self):
+    def numbers(self): # 
         return self._numbers
     
     def address(self):
         return self._address 
     
     def add_number(self,number):
-        self._numbers.append(number)
+        self._numbers.append(number) #method to add a number
 
     def add_address(self, address):
-        self._address = address
+        self._address = address 
 
 
 person = Person("Eric")
@@ -291,22 +291,50 @@ class Phonebook:
         self._persons = {}
 
     def add_number(self, name, number):
-        if name not in self._persons:
+        if name not in self._persons: # if person not in dictionary, creates a new person 
             self._persons[name] = Person(name)
         self._persons[name].add_number(number)
 
     def add_address(self, name, address):
         if name not in self._persons:
             self._persons[name] = Person(name)
+        self._persons[name].add_address(address)
         
-    def get_entry(self, name):
+    def get_entry(self, name): # method to get number and address of a person
         if name in self._persons:
             person = self._persons[name]
             return person.numbers(), person.address()
-        else:
+        else: # if persons name not found in dictionary
             return "number unknown", "address unknown"
+
+#part-3
+def main():
+    phonebook = Phonebook()  
+    while True:
+        print("commands:")
+        print("0 exit")
+        print("1 add number")
+        print("2 search")
+        print("3 add address1")
+
+        command = input("command: ")
         
-phonebook = Phonebook()
-phonebook.add_number("Eric","02-123456")
-print(phonebook.get_entry("Eric"))
-print(phonebook.get_entry("Emily"))
+        if command == "0":
+            break
+        elif command =="1":
+            name = input("Name: ")
+            number = input("Number: ")
+            phonebook.add_number(name, number)
+        elif command == "2":
+            name = input("Name: ")
+            numbers, address = phonebook.get_entry(name)
+            print(numbers[0] if numbers else "Number unknown")
+            print(address if address else "Address unknown")
+        elif command == "3":
+            name = input("Name: ")
+            address = input("Address: ")
+            phonebook.add_address(name, address)
+
+if __name__=="__main__":
+    main()
+
