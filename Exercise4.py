@@ -284,3 +284,29 @@ person.add_number("040-123456")
 person.add_address("Mannerheimintie 10 Helsinki")
 print(person.numbers())
 print(person.address())
+
+#part-2
+class Phonebook:
+    def __init__(self):
+        self._persons = {}
+
+    def add_number(self, name, number):
+        if name not in self._persons:
+            self._persons[name] = Person(name)
+        self._persons[name].add_number(number)
+
+    def add_address(self, name, address):
+        if name not in self._persons:
+            self._persons[name] = Person(name)
+        
+    def get_entry(self, name):
+        if name in self._persons:
+            person = self._persons[name]
+            return person.numbers(), person.address()
+        else:
+            return "number unknown", "address unknown"
+        
+phonebook = Phonebook()
+phonebook.add_number("Eric","02-123456")
+print(phonebook.get_entry("Eric"))
+print(phonebook.get_entry("Emily"))
